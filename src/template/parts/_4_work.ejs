@@ -1,0 +1,56 @@
+<section class="sec_work scroll-point" id="work">
+    <h1 class="backDrop">work</h1>
+    <div class="work_list">
+        <div>
+            <!-- work list -->
+            <p class="Readtext">
+                <span class="br">最近携わった主な仕事</span>
+            </p>
+            <ul>
+                <% for (var i = 0; i < 10; i++) { %>
+                <li class="noDelayScroll">
+                    <div class="work_a js-modal-open" data-target="modal<%= i+1 %>">
+                        <img src="assets/img/work/w_01/mock.png" alt="work">
+                        <div class="down">業務内容</div>
+                        <div class="title"><span>portfolio</span><span>2022</span></div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+            <!-- /work list -->
+        </div>
+    </div>
+</section>
+<!-- modal inner -->
+<% for (var i = 0; i < 10; i++) { %>
+<!-- work modal list -->
+<div id="modal<%= i+1 %>" class="modal js-modal">
+    <div class="modal-bg js-modal-close">
+    </div>
+    <div class="modal-content">
+        <div class="modal-content__inner">
+            <section>
+                <h1>portfolio</h1>
+                <img src="assets/img/work/w_01/mock.png" alt="work">
+                <dl>
+                    <dt>URL</dt>
+                    <dd><a href="" target="_blank">xxx</a></dd>
+                    <dt>ページ数</dt>
+                    <dd>xxx</dd>
+                    <dt>制作期間</dt>
+                    <dd>xxx</dd>
+                    <dt>担当ポジション</dt>
+                    <dd>xxx</dd>
+                    <dt>使用アイテム</dt>
+                    <dd>xxx</dd>
+                    <dt>ポイント</dt>
+                    <dd>xxx</dd>
+                </dl>
+            </section>
+            <span href="#" class="js-modal-close"><img src="assets/img/icon/back.svg" alt="back"></span>
+        </div>
+    </div>
+</div>
+<!-- /work modal list -->
+<% } %>
+<!-- /modal inner -->

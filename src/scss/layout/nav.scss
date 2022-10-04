@@ -1,0 +1,183 @@
+/* ============================
+// nav
+// ============================ */
+
+@import "../foundation/variables.scss";
+@import "../foundation/mixins.scss";
+
+
+
+/* navigation */
+
+.openbtn{
+	display: none;
+	position: relative;
+	background:#000;
+	cursor: pointer;
+	width: 50px;
+	height:50px;
+	border-radius: 5px;
+	top: 10px;
+	right: 5px;
+	z-index: 10;
+	span{
+		display: inline-block;
+		transition: all .4s;/*アニメーションの設定*/
+		position: absolute;
+		left: 14px;
+		height: 3px;
+		border-radius: 2px;
+	  	background: #fff;
+		width: 45%;
+		&:nth-of-type(1) {
+			top:15px; 
+		}
+		&:nth-of-type(2) {
+			top:23px;
+		}
+		&:nth-of-type(3) {
+			top:31px;
+		}
+	}
+	&.active{
+		
+		span{
+			&:nth-of-type(1) {
+				top: 18px;
+				left: 10px;
+				transform: translateY(6px) rotate(-45deg);
+				width: 60%;
+			}
+			&:nth-of-type(2) {
+				opacity: 0;
+			}
+			&:nth-of-type(3) {
+				top: 30px;
+				left: 10px;
+				transform: translateY(-6px) rotate(45deg);
+				width: 60%;
+			}
+		}
+	}
+}
+nav{
+	display: flex;
+	flex-direction: row;
+    color: $white;
+	padding-right: 5px;
+    padding: 8px 5px 8px 5px;
+	border-radius: 5px 0 0 5px;
+	white-space: nowrap;
+	font-size: 1.2rem;
+
+    @include mq(media_s){
+		position: fixed;
+		right: 0;
+		top: -10px;
+	  }
+	&.navbg{
+	background: black;
+
+	}
+	ul{
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		li{
+            padding: 0 5px;
+			cursor: pointer;
+			> span{
+				text-decoration: none;
+				border: solid 1px $white;
+                padding: 2px 10px 2px 10px;
+				display: block;
+				color: $white;
+				transition:all 0.3s;
+				color: $white;
+				background: transparent;
+				display: flex;
+				font-family: "web Comfortaa", cursive,;
+				
+				&:hover{
+					color: $white;
+					background-color: $white-a4;
+
+				}
+			}
+			&.current{
+				span{
+					color: $black;
+					background: $white;
+				}
+			}
+		}
+	}
+}
+
+
+/* ==============
+// SP nav
+// ============== */
+
+@include mq(media_s){
+	.openbtn{
+		display: block;
+	}
+	nav{
+		display: flex;
+		flex-direction: row;
+		color: $white;
+		padding-right: 5px;
+		padding: 8px 5px 8px 5px;
+		border-radius: 5px 0 0 5px;
+		white-space: nowrap;
+		font-size: 1.2rem;
+		&.navbg{
+		background: transparent;
+
+		}
+		ul{
+			display: flex;
+			align-content: center;
+		    align-items: center;
+			flex-direction: column;
+			width: 100px;
+			height: 100vh;
+			top: 0;
+			right: -110px;
+			position: fixed;
+			background-color: #000;
+			transition: right 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+			li{
+				padding: 0 5px;
+
+				span{
+					height: 60px;
+					width: 60px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 5px 0;
+					&:hover{
+
+					}
+				}
+				&.current{
+					a{
+					}
+				}
+			}
+		}
+	}
+
+	.openbtn.active {
+		&.navbg{
+
+		}
+		+ ul{
+			right: 0;
+			transition: right 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+		}
+	}
+}

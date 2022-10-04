@@ -1,0 +1,118 @@
+/* ============================
+// header
+// ============================ */
+
+@import "../foundation/variables.scss";
+@import "../foundation/mixins.scss";
+
+
+header{
+    align-items: center;
+    background: $black;
+    display: flex;
+		font-family: "web Comfortaa", cursive,;
+    height: 50px;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+    @include mq(media_s){
+      height: 70px;
+      position: absolute;
+    }
+    h1{
+        font-weight: bold;
+        color: $white;
+        line-height: 1;
+    }
+}
+#header{
+    opacity: 1;
+    transition: all .5s ease;
+    &.headernone{
+      @include mq(media_s){
+        opacity: 0;
+        transition: all .5s ease;
+      }
+    }
+}
+
+/* ============================
+// footer
+// ============================*/
+
+footer{
+    height: 100px;
+    background-color: $black;
+}
+/*リンクの形状*/
+#page-top a{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background:$black;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase; 
+    text-decoration: none;
+    
+    font-size:0.6rem;
+    transition:all 0.3s;
+    img{
+        filter: invert(1);
+        transform: rotate(90deg);
+        position: absolute;
+        top: -1px;
+    }
+  }
+  
+  #page-top a:hover{
+    transform: translateY(-10px);
+  }
+  
+  /*リンクを右下に固定*/
+  #page-top {
+    position: fixed;
+    right: 10px;
+    z-index: 2;
+      /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  /*　上に上がる動き　*/
+  
+  #page-top.UpMove{
+    animation: UpAnime 0.5s forwards;
+  }
+  @keyframes UpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  /*　下に下がる動き　*/
+  
+  #page-top.DownMove{
+    animation: DownAnime 0.5s forwards;
+  }
+  @keyframes DownAnime{
+    from {
+      opacity: 1;
+    transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(100px);
+    }
+  }
+  

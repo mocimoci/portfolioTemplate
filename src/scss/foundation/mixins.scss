@@ -1,0 +1,42 @@
+/* ----------------------------------------
+// Mixins
+// ----------------------------------------*/
+
+@import "./variables.scss";
+
+/*  media
+   メディアクエリを定義する Mixin
+   + $media : pc / sp
+   @include media([media]) {}; 
+*/
+
+$breakpoints: (
+  "media_ms": "screen and (max-width: 600px)",
+  "media_s": "screen and (max-width: 767px)",
+  "media_m": "screen and (min-width: 768px)",
+  "media_l": "screen and  (min-width: 769px) and (max-width: 1000px)",
+  "media_minl": "screen and (min-width: 1000px)",
+  "media_maxl": "screen and (max-width: 1000px)",
+  "media_xl": "screen and (min-width: 1001px) and (max-width: 1400px)",
+  "media_xxl": "screen and (min-width: 1400px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+/*
+  font-size
+   font-sizeをpxとremで定義する
+   @include font-size([pxsize]);
+*/
+
+@mixin font-size($px-size) {
+  font-size: #{$px-size}px;
+  font-size: #{$px-size / 10}rem;
+}
+
+

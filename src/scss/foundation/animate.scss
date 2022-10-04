@@ -1,0 +1,251 @@
+/* ----------------------------------------
+ Animation
+----------------------------------------*/
+
+@import "./variables.scss";
+@import "./mixins.scss";
+
+
+
+@keyframes GradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/*=================================
+ふわっ
+===================================*/
+.noDelayScroll{
+  transform: translateY(100px);
+}
+.fadeUp {
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  transform: translateY(100px);
+  opacity: 1;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 1;
+      transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/*=================================
+順番にふわっ
+===================================*/
+
+
+
+@include mq(media_minl){
+  .noDelayScroll{
+    transform: translateY(100px);
+  }
+  .fadeUpDelay {
+    animation-name:fadeUpAnimeDelay;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    transform: translateY(100px);
+    opacity: 1;
+  }
+
+}
+  
+@keyframes fadeUpAnimeDelay{
+  from {
+    opacity: 1;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=================================
+ストライプ
+===================================*/
+  .stripe {
+    background: linear-gradient(45deg,#C4D9F4 25%, #F9C9D6 25%,#F9C9D6 50%, #C4D9F4 50%,#C4D9F4 75%, #F9C9D6 75%,#F9C9D6);
+    background-size: 40px 40px;
+    animation: anime_stripe 2s infinite linear;
+  }
+  @keyframes anime_stripe {
+    0% {  background-position-x: 0;}
+    100% {  background-position-x: 40px;}
+  }
+  
+/*=================================
+Hero area
+===================================*/
+$durationTime: .8s;
+$delayTime: 0s;
+
+
+$heroDurationTime: 1s;
+$heroDelayTime: 1s;
+
+/* テキスト */
+.bgRLextend{
+	animation-name:bgRLextendAnimeText;
+	animation-duration:$durationTime;
+  animation-delay: $delayTime;
+	animation-fill-mode:forwards;
+  position: relative;
+  color:$gray-a0;
+}
+/* メインは遅らせる */
+.hero .bgRLextend{
+	animation-duration:$heroDurationTime;
+	animation-delay:$heroDelayTime;
+}
+
+@keyframes bgRLextendAnimeText{
+	0% {
+
+    color: $gray-a0;/*伸びる文字色の設定*/
+	}
+	50% {
+
+    color: $gray-a0;/*伸びる文字色の設定*/
+	}
+	50.001% {
+    color: $gray-a10;/*伸びる文字色の設定*/
+	}
+	100% {
+    color: $gray-a10;/*伸びる文字色の設定*/
+	}
+}
+
+/* 文字以外のアイテム */
+.bgRLextend{
+  span,li {
+	animation-name:bgRLextendIten;
+	animation-duration:$durationTime;
+  animation-delay: $delayTime;
+	animation-fill-mode:forwards;
+  opacity: 0;
+  }
+}
+
+.bgRLextend::after{
+	animation-name:bgRLextendIten;
+	animation-duration:$durationTime;
+  animation-delay: $delayTime;
+	animation-fill-mode:forwards;
+  opacity: 0;
+}
+/* メインは遅らせる */
+.hero .bgRLextend {
+  span,li {
+	animation-duration:$heroDurationTime;
+	animation-delay:$heroDelayTime;
+  }
+}
+
+@keyframes bgRLextendIten{
+	0% {
+
+    opacity: 0;
+	}
+	50% {
+
+    opacity: 0;
+	}
+	50.001% {
+    opacity: 1;
+	}
+	100% {
+    opacity: 1;
+	}
+}
+
+/* 背景 */
+.bgRLextend::before{
+	
+	animation-duration:$durationTime;
+  animation-delay: $delayTime;
+	animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: $gray-a0;/*伸びる背景色の設定*/
+    @include mq(media_maxl){animation-name:bgRLextendAnimeSp;}
+    @include mq(media_minl){animation-name:bgRLextendAnimePc;}
+}
+
+/* メインは遅らせる */
+.hero .bgRLextend::before{
+	animation-duration:$heroDurationTime;
+	animation-delay:$heroDelayTime;
+}
+
+
+@keyframes bgRLextendAnimeSp{
+	0% {
+    background-color: $gray-a10;
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+	45% {
+    background-color: $gray-a10;
+		transform-origin:right;
+		transform:scaleX(1);
+	}
+	60% {
+    background-color: $gray-a10;
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	100% {
+    background-color: $gray-a10;
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+}
+@keyframes bgRLextendAnimePc{
+	0% {
+    background-color: $gray-a10;
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+	50% {
+    background-color: $gray-a10;
+		transform-origin:right;
+		transform:scaleX(1);
+	}
+	51% {
+    background-color: $gray-a10;
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	100% {
+    background-color: $gray-a10;
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+}

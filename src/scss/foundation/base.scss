@@ -1,0 +1,140 @@
+/* ----------------------------------------
+// 基本設定
+// ----------------------------------------*/
+@charset "UTF-8";
+
+@import "./variables.scss";
+@import "./mixins.scss";
+
+html {
+  font-size: 62.5%;
+}
+a {
+  display: block;
+}
+body {
+  color: $base-font-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  line-height: $base-line-height;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  word-break: break-all;
+  background-color:hsla(0,100%,83%,1);
+  background-image:
+  radial-gradient(at 0% 49%, hsla(201,100%,91%,1) 0px, transparent 50%),
+  radial-gradient(at 86% 5%, hsla(161,90%,87%,1) 0px, transparent 50%),
+  radial-gradient(at 78% 80%, hsla(20,100%,92%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 100%, hsla(33,100%,86%,1) 0px, transparent 50%),
+  radial-gradient(at 0% 15%, hsla(204,100%,91%,1) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: GradientBackground 100s ease infinite;
+}
+
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+.br {
+  display: inline-block;
+}
+.marker{
+  background:linear-gradient(transparent 50%, $t_yellow 50%);
+}
+
+::selection {
+  background-color:#ff3269c9;
+  color: $white;
+}
+
+img::selection {
+  background-color:$white;
+}
+
+.hero h1::selection {
+  background-color:rgb(255 255 255 / .1);
+  color:$black;
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+::-webkit-input-placeholder {
+  line-height: normal;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.text_link {
+  color: $link;
+  text-decoration: underline;
+  display: inline;
+}
+
+/* 改行禁止 */
+.no_br {
+  white-space: nowrap;
+}
+
+.figure {
+  display: block;
+  width: 100%;
+  + .figure {
+    margin-top: 10px;
+  }
+}
+
+/* カーソル */
+input {
+  cursor: pointer;
+}
+
+
+@include mq(media_m){
+  .pc_only{
+    display: block ;
+  }
+  .sp_only{
+    display: none !important;
+  }
+}
+
+@include mq(media_s){
+  .pc_only{
+    display: none !important;
+  }
+  .sp_only{
+    display: block ;
+  }
+}

@@ -1,0 +1,54 @@
+
+<% include ./parts/_0_topphp %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>Kana's Portfolio</title>
+  <% include ./parts/_1_head %>
+</head>
+<body id="body">
+  <div id="splash">
+  <div id="splash-logo">読み込み中</div>
+  <!--/splash--></div>
+  <div class="splashbg"></div><!---画面遷移用-->
+  
+  <% include ./parts/_2_header %>
+  <main>
+  
+    <!-- hero section -->
+    <% include ./parts/_3_hero %>
+    <!-- /hero section -->
+
+    <!-- special-skill section -->
+    <% include ./parts/_3_special-skill.ejs %>
+    <!-- /special-skill section -->
+
+    <!-- work section -->
+    <% include ./parts/_4_work %>
+    <!-- /work section -->
+    
+    <!-- skill section -->
+    <% include ./parts/_5_skill %>
+    <!-- /skill section -->
+
+    <!-- history section -->
+    <% include ./parts/_6_history %>
+    <!-- /history section -->
+
+    <!-- about section -->
+    <% include ./parts/_7_about %>
+    <!-- /about section -->
+    
+</main>
+<% include ./parts/_8_footer %>
+<script
+  src="https://code.jquery.com/jquery-3.1.0.js"
+  integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+  crossorigin="anonymous"
+></script>
+</body>
+</html>
+
+
+

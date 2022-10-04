@@ -1,0 +1,105 @@
+/* ----------------------------------------
+// Color
+// ---------------------------------------- */
+
+/* Guideline Color */
+$white: #fff;
+$white-gray :#fafafa;
+$black: #000;
+$body_color: #fdfdfd;
+$pink: #db7093;
+$pink2: #5d7a74;
+$pink3: #b55776;
+$pink4: #70789b;
+$green: #45A38C;
+
+$right-gray: #dbdbdb;
+$font: #333;
+
+/* リンク */
+$link: #3fa9f5;
+$link-yellow: #dec400;
+
+/* グラフ */
+$purple :#54448A;
+
+/* ナビ */
+$yellow: #eccd0b66;
+
+/* メイン３色 */
+$t_yellow: #EAE65F;
+$t_pink: #F9C9D6;
+$t_blue: #C4D9F4;
+
+
+/* 白黒濃度 */
+$gray-a0: rgba(0, 0, 0, 0);
+$gray-a1: rgba(0, 0, 0, 0.1);
+$gray-a2: rgba(0, 0, 0, 0.2);
+$gray-a3: rgba(0, 0, 0, 0.3);
+$gray-a4: rgba(0, 0, 0, 0.4);
+$gray-a5: rgba(0, 0, 0, 0.5);
+$gray-a6: rgba(0, 0, 0, 0.6);
+$gray-a7: rgba(0, 0, 0, 0.7);
+$gray-a8: rgba(0, 0, 0, 0.8);
+$gray-a9: rgba(0, 0, 0, 0.9);
+$gray-a10: rgba(0, 0, 0, 1);
+
+$white-a0: rgba(255, 255, 255, 0);
+$white-a1: rgba(255, 255, 255, 0.1);
+$white-a2: rgba(255, 255, 255, 0.2);
+$white-a3: rgba(255, 255, 255, 0.3);
+$white-a4: rgba(255, 255, 255, 0.4);
+$white-a5: rgba(255, 255, 255, 0.5);
+$white-a6: rgba(255, 255, 255, 0.6);
+$white-a7: rgba(255, 255, 255, 0.7);
+$white-a8: rgba(255, 255, 255, 0.8);
+$white-a9: rgba(255, 255, 255, 0.9);
+
+
+/* ----------------------------------------
+// gradation
+// ---------------------------------------- */
+
+
+
+/* ----------------------------------------
+// Layaut
+// ---------------------------------------- */
+
+$max-width: 768px;
+$max-view-width: 1200px;
+
+$max-width-60: $max-width - 60px;
+$max-width-40: $max-width - 40px;
+$max-width-30: $max-width - 30px;
+
+/* ----------------------------------------
+// Typography
+// ---------------------------------------- */
+
+$base-font-color: $font;
+$base-font-size: 1.4rem;
+$base-browser-font-size: 1.6rem;
+$base-font-family:  
+"MPLUSRounded",
+"Helvetica Neue",
+Arial,
+"Hiragino Kaku Gothic ProN",
+"Hiragino Sans",
+Meiryo,
+sans-serif;
+$base-line-height: 1.6;
+
+/* $web-font: "M PLUS Rounded 1c", sans-serif; */
+$web-font: 'Mitr', sans-serif;
+
+
+/* ----------------------------------------
+// Link
+// ---------------------------------------- */
+$base-link-color: inherit;
+
+/* ----------------------------------------
+// Font
+// ---------------------------------------- */
